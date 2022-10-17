@@ -24,6 +24,24 @@ namespace wpfProject2
         {
             InitializeComponent();
             MainFrame.Navigate(new HotelsPage());
+            Manager.MainFrame = MainFrame;
+        }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.GoBack();
+        }
+
+        private void MainFrame_ContentRendered(object sender, EventArgs e)
+        {
+            if(MainFrame.CanGoBack)
+            {
+                back.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                back.Visibility = Visibility.Hidden;
+            }
         }
     }
 }

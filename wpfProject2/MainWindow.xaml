@@ -21,14 +21,15 @@
             <Image HorizontalAlignment="Left"  Height="78" VerticalAlignment="Top" Width="118" Source="/logo.png" />
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1"  Background="#FFC6F1FF">
-            
+            <Button x:Name="back" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31" Width="106" Click="back_Click"/>
+
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1"  Background="#FF1B304C">
-            
+
         </Grid>
         <Grid Grid.Row="3" Grid.Column="0"  Background="#FF1B304C">
-            
+
         </Grid>
-        <Frame Grid.Row="1" Name="MainFrame"></Frame>
+        <Frame Grid.Row="1" NavigationUIVisibility='Hidden' ContentRendered="MainFrame_ContentRendered" Name="MainFrame"></Frame>
     </Grid>
 </Window>
