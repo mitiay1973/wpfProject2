@@ -9,7 +9,23 @@
       Title="HotelsPage">
 
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Click="button_Click"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="377*"/>
+            <RowDefinition Height="73*"/>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="DgridHotels">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название отеля" Binding="{Binding Name}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество звёзд" Binding="{Binding CountOfStars}" Width="150"></DataGridTextColumn>
+                <DataGridTextColumn Header="Страна" Binding="{Binding Country.Name}" Width="250"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="Button" Content="Редактировать" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Click="button_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
