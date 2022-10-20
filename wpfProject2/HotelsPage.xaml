@@ -9,7 +9,7 @@
       Title="HotelsPage">
 
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="164,0,0,0" VerticalAlignment="Center" Click="button_Click"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Center" Margin="0,225,0,0" VerticalAlignment="Top" Click="button_Click"/>
 
     </Grid>
 </Page>

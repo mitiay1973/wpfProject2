@@ -14,20 +14,15 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="0" Grid.Column="0"  Background="#FFC6F1FF">
+        <Grid Grid.Row="0"  Background="#FFC6F1FF">
             <Label Content="Турфирма"  HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="48" Margin="132,10,0,0"/>
             <Image HorizontalAlignment="Left"  Height="78" VerticalAlignment="Top" Width="118" Source="/logo.png" />
-        </Grid>
-        <Grid Grid.Row="0" Grid.Column="1"  Background="#FFC6F1FF">
-            <Button x:Name="back" Content="Назад" HorizontalAlignment="Center" VerticalAlignment="Center" Height="31" Width="106" Click="back_Click"/>
+            <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="106" Click="back_Click" Margin="583,39,0,0"/>
 
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1"  Background="#FF1B304C">
 
-        </Grid>
-        <Grid Grid.Row="3" Grid.Column="0"  Background="#FF1B304C">
 
         </Grid>
         <Frame Grid.Row="1" NavigationUIVisibility='Hidden' ContentRendered="MainFrame_ContentRendered" Name="MainFrame"></Frame>
