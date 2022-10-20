@@ -30,5 +30,14 @@ namespace wpfProject2
         {
             Manager.MainFrame.Navigate(new AddEditPage());
         }
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

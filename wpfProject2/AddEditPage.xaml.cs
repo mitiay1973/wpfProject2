@@ -24,5 +24,10 @@ namespace wpfProject2
         {
             InitializeComponent();
         }
+
+        private void BtSave_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
