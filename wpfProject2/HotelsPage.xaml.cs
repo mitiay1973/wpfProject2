@@ -33,7 +33,7 @@ namespace wpfProject2
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-
+            Manager.MainFrame.Navigate(new AddEditPage());
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {

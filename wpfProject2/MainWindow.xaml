@@ -18,7 +18,7 @@
         <Grid Grid.Row="0"  Background="#FFC6F1FF">
             <Label Content="Турфирма"  HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="36" Margin="93,17,0,0"/>
             <Image HorizontalAlignment="Left"  Height="46" VerticalAlignment="Top" Width="73" Source="/logo.png" Margin="10,29,0,0" />
-            <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="106" Click="back_Click" Margin="583,39,0,0"/>
+            <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="106" Click="back_Click" Margin="644,44,0,0" RenderTransformOrigin="0.44,0.695"/>
 
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1"  Background="#FF1B304C">
