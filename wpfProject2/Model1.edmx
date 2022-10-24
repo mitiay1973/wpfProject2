@@ -37,7 +37,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="HotelId" Type="int" Nullable="false" />
-          <Property Name="ImageSource" Type="varchar(max)" Nullable="false" />
+          <Property Name="ImageSource" Type="varbinary(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="HotelOfTour">
           <Key>
@@ -65,7 +65,7 @@
           <Property Name="TickerCount" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Description" Type="nvarchar(max)" />
-          <Property Name="ImagePreview" Type="varchar(max)" />
+          <Property Name="ImagePreview" Type="varbinary(max)" Nullable="false" />
           <Property Name="Price" Type="money" Nullable="false" />
           <Property Name="IsActual" Type="bit" Nullable="false" />
         </EntityType>
@@ -251,7 +251,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="HotelId" Type="Int32" Nullable="false" />
-          <Property Name="ImageSource" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageSource" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <NavigationProperty Name="Hotel" Relationship="Self.FK_HotelImage_Hotel" FromRole="HotelImage" ToRole="Hotel" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -272,7 +272,7 @@
           <Property Name="TickerCount" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="ImagePreview" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImagePreview" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
           <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="IsActual" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Hotel" Relationship="Self.HotelOfTour" FromRole="Tour" ToRole="Hotel" />

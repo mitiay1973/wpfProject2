@@ -12,15 +12,14 @@ namespace wpfProject2
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class Entities : DbContext
     {
         private static Entities _instance;
         public Entities()
-        : base("name=Entities")
+            : base("name=Entities")
         {
         }
-
 
         public static Entities GetContext()
         {
@@ -40,5 +39,4 @@ namespace wpfProject2
         public virtual DbSet<Tour> Tours { get; set; }
         public virtual DbSet<Type> Types { get; set; }
     }
-
 }

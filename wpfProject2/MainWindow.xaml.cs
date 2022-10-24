@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,44 @@ namespace wpfProject2
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new HotelsPage());
+            //MainFrame.Navigate(new HotelsPage());
+            MainFrame.Navigate(new ToursPage());
             Manager.MainFrame = MainFrame;
+            //ImportTours();
+        }
+
+        private void ImportTours()
+        {
+            var fileData = File.ReadAllLines(@"C:\Туры\Туры.txt");
+            var images = Directory.GetFiles(@"C:\Туры фото");
+            foreach (var line in fileData)
+            {
+                var data = line.Split('\t');
+                var tempTour = new Tour
+                {
+                    Name = data[0].Replace("\"", ""),
+                    TickerCount = int.Parse(data[2]),
+                    Price = int.Parse(data[3]),
+                    IsActual = (data[4] == "0") ? false : true
+                };
+
+                foreach (var tourType in data[5].Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    var currentType = Entities.GetContext().Types.ToList().FirstOrDefault(p => p.Name == tourType);
+                    if (currentType != null)
+                        tempTour.Type.Add(currentType);
+                }
+                try
+                {
+                    tempTour.ImagePreview = File.ReadAllBytes(images.FirstOrDefault(p => p.Contains(tempTour.Name)));
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                Entities.GetContext().Tours.Add(tempTour);
+                Entities.GetContext().SaveChanges();
+            }
         }
 
         private void back_Click(object sender, RoutedEventArgs e)
