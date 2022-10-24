@@ -39,5 +39,14 @@ namespace wpfProject2
         {
 
         }
+
+        private void Page_isVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if(Visibility == Visibility.Visible)
+            {
+                Entities.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                DgridHotels.ItemsSource = Entities.GetContext().Hotels.ToList();
+            }
+        }
     }
 }

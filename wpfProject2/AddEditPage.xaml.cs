@@ -20,13 +20,42 @@ namespace wpfProject2
     /// </summary>
     public partial class AddEditPage : Page
     {
+        private Hotel currentHotel = new Hotel();
         public AddEditPage()
         {
             InitializeComponent();
+            DataContext= currentHotel;
             ComboCountries.ItemsSource = Entities.GetContext().Countries.ToList();
         }
 
         private void BtSave_Click(object sender, RoutedEventArgs e)
+        {
+            StringBuilder errors = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(currentHotel.Name))
+                errors.AppendLine("Укажите название отеля");
+            if (currentHotel.CountOfStars < 1 || currentHotel.CountOfStars > 5)
+                errors.AppendLine("Количество звезд - число от 1 до 5");
+            if (currentHotel.Country == null)
+                errors.AppendLine("Выберите страну");
+            if(errors.Length>0)
+            {
+                MessageBox.Show(errors.ToString());
+                return;
+            }
+            if(currentHotel.Id==0)
+                Entities.GetContext().Hotels.Add(currentHotel);
+            try
+            {
+                Entities.GetContext().SaveChanges();
+                MessageBox.Show("Информация сохранена");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void ComboCountries_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

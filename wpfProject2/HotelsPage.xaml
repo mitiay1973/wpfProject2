@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:wpfProject2"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="HotelsPage">
+      Title="HotelsPage"  IsVisibleChanged="Page_isVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
