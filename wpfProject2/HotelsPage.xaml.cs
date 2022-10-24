@@ -28,7 +28,7 @@ namespace wpfProject2
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Manager.MainFrame.Navigate(new AddEditPage());
+            Manager.MainFrame.Navigate(new AddEditPage((sender as Button).DataContext as Hotel));
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,21 @@ namespace wpfProject2
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            var hotelsForRemoving = DgridHotels.SelectedItems.Cast<Hotel>().ToList();
+            if(MessageBox.Show($"Вы точно хотите удалить следующие {hotelsForRemoving.Count()} элементов?", "Внимание", MessageBoxButton.YesNo,MessageBoxImage.Question)==MessageBoxResult.Yes)
+            {
+                try
+                {
+                    Entities.GetContext().Hotels.RemoveRange(hotelsForRemoving);
+                    Entities.GetContext().SaveChanges();
+                    MessageBox.Show("Даныые удалены");
+                    DgridHotels.ItemsSource = Entities.GetContext().Hotels.ToList();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
 
         private void Page_isVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

@@ -27,6 +27,14 @@ namespace wpfProject2
             DataContext= currentHotel;
             ComboCountries.ItemsSource = Entities.GetContext().Countries.ToList();
         }
+        public AddEditPage(Hotel selectedHotel)
+        {
+            InitializeComponent();
+            if(selectedHotel !=null)
+                currentHotel = selectedHotel;
+            DataContext = currentHotel;
+            ComboCountries.ItemsSource=Entities.GetContext().Countries.ToList();
+        }
 
         private void BtSave_Click(object sender, RoutedEventArgs e)
         {
