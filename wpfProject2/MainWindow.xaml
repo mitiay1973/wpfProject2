@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfProject2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Height="434" VerticalAlignment="Bottom" >
+        Title="MainWindow" Height="1000" Width="1500">
+    <Grid Height="1000" VerticalAlignment="Bottom" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="81*"/>
+            <RowDefinition Height="50*"/>
             <RowDefinition Height="328*"/>
             <RowDefinition Height="25*"/>
         </Grid.RowDefinitions>
@@ -16,14 +16,12 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="0"  Background="#FFC6F1FF">
-            <Label Content="Турфирма"  HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="36" Margin="93,17,0,0"/>
-            <Image HorizontalAlignment="Left"  Height="46" VerticalAlignment="Top" Width="73" Source="/logo.png" Margin="10,29,0,0" />
-            <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="106" Click="back_Click" Margin="644,44,0,0" RenderTransformOrigin="0.44,0.695"/>
-
+            <Label Content="Турфирма"  HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="36" Margin="105,48,0,0"/>
+            <Image HorizontalAlignment="Left"  Height="46" VerticalAlignment="Top" Width="73" Source="/logo.png" Margin="10,60,0,0" />
+            <CheckBox x:Name="CheckStr" Checked="CheckStr_Checked" Unchecked="CheckStr_Unchecked" Content="Переключатель" HorizontalAlignment="Left" Margin="633,66,0,24" Width="123"></CheckBox>
+            <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="106" Click="back_Click" Margin="1299,71,0,0" RenderTransformOrigin="0.44,0.695"/>
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1"  Background="#FF1B304C">
-
-
         </Grid>
         <Frame Grid.Row="1" NavigationUIVisibility='Hidden' ContentRendered="MainFrame_ContentRendered" Name="MainFrame"></Frame>
     </Grid>

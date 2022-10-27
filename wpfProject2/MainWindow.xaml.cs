@@ -24,8 +24,7 @@ namespace wpfProject2
         public MainWindow()
         {
             InitializeComponent();
-            //MainFrame.Navigate(new HotelsPage());
-            MainFrame.Navigate(new ToursPage());
+            MainFrame.Navigate(new HotelsPage());            
             Manager.MainFrame = MainFrame;
             //ImportTours();
         }
@@ -67,6 +66,14 @@ namespace wpfProject2
         private void back_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.GoBack();
+        }
+        private void CheckStr_Checked(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new ToursPage());
+        }
+        private void CheckStr_Unchecked(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new HotelsPage());
         }
 
         private void MainFrame_ContentRendered(object sender, EventArgs e)
