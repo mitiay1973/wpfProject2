@@ -18,8 +18,17 @@
         <Grid Grid.Row="0"  Background="#FFC6F1FF">
             <Label Content="Турфирма"  HorizontalAlignment="Left" VerticalAlignment="Top"  FontSize="36" Margin="105,48,0,0"/>
             <Image HorizontalAlignment="Left"  Height="46" VerticalAlignment="Top" Width="73" Source="/logo.png" Margin="10,60,0,0" />
-            <CheckBox x:Name="CheckStr" Checked="CheckStr_Checked" Unchecked="CheckStr_Unchecked" Content="Переключатель" HorizontalAlignment="Left" Margin="633,66,0,24" Width="123"></CheckBox>
-            <Button x:Name="back" Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="106" Click="back_Click" Margin="1299,71,0,0" RenderTransformOrigin="0.44,0.695"/>
+            <CheckBox x:Name="CheckStr" Checked="CheckStr_Checked" Unchecked="CheckStr_Unchecked" Content="Переключатель" HorizontalAlignment="Left" Margin="633,66,0,24" Width="167" RenderTransformOrigin="0.5,0.5" FontSize="20">
+                <CheckBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="0"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </CheckBox.RenderTransform>
+            </CheckBox>
+            <Button x:Name="back" Content="Назад" Click="back_Click" Margin="1320,54,24,16" RenderTransformOrigin="0.44,0.695" FontSize="36" FontFamily="Bahnschrift" Padding="1,1,1,1" Grid.IsSharedSizeScope="True" />
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1"  Background="#FF1B304C">
         </Grid>

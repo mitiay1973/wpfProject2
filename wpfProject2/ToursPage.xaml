@@ -5,23 +5,23 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:wpfProject2"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="1000" d:DesignWidth="1500"
       Title="ToursPage">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Width="1500">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Введите название для поиска:" Width="175" TextAlignment="Right"></TextBlock>
-                <TextBox Width="225" Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged"></TextBox>
+                <TextBlock Text="Введите название для поиска: " Width="175" TextAlignment="Right" HorizontalAlignment="Left" Margin="50,0,0,0"></TextBlock>
+                <TextBox Width="225" Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged" HorizontalAlignment="Left" Margin="30,0,0,0"></TextBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Выберите тип:" Width="175" TextAlignment="Right"></TextBlock>
+                <TextBlock Text="Выберите тип: " Width="175" TextAlignment="Right"></TextBlock>
                 <ComboBox Width="225" Name="ComboType" SelectionChanged="ComboType_SelectionChanged" DisplayMemberPath="Name"></ComboBox>
             </StackPanel>
-            <CheckBox x:Name="CheckActual" Checked="CheckActual_Checked" Unchecked="CheckActual_Checked" Content="Показывать только актуальные туры" HorizontalAlignment="Center"></CheckBox>
+            <CheckBox x:Name="CheckActual" Checked="CheckActual_Checked" Unchecked="CheckActual_Checked" Content="Показывать только актуальные туры" HorizontalAlignment="Center" HorizontalContentAlignment="Right" Margin="370,0,0,0"/>
         </WrapPanel>
         <ListView Grid.Row="1" Name="LViewTours" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Center">
                 <ListView.ItemsPanel>
